@@ -1,5 +1,12 @@
 # Filmpire - By James Drysdale
 
+## MVP
+
+- User can see a list of films
+- User can see details for individual films
+- User can see a list of Actors
+- User can see a profile page
+
 ## Available Scripts
 
 In the project directory, you can run:
