@@ -5,7 +5,9 @@ import { useGetMoviesQuery } from '../../services/TMDB';
 import { MovieList } from '..';
 
 const Movies = () => {
-  const { data, error, isFetching } = useGetMoviesQuery();
+  const [page, setPage] = useState(1);
+  const { categoryNameOrGenreId } = useSelector((state) => state.currentCategoryOrGenre);
+  const { data, error, isFetching } = useGetMoviesQuery({ categoryNameOrGenreId, page });
 
   if (isFetching) {
     return (
@@ -27,9 +29,7 @@ const Movies = () => {
     );
   }
 
-  if (error) {
-    return 'An error has occurred';
-  }
+  if (error) return 'An error has occurred';
 
   return (
     <div>
