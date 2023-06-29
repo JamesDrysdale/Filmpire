@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, CircularProgress, Divider, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
 import { useTheme } from '@mui/styles';
+import { useGetGenresQuery } from '../../services/TMDB';
 import useStyles from './styles';
 
 // Mocking the categories for now
@@ -11,27 +12,11 @@ const categories = [
   { label: 'Upcoming', value: 'upcoming' },
 ];
 
-const demoCategories = [
-  { label: 'Action', value: 'action' },
-  { label: 'Adventure', value: 'adventure' },
-  { label: 'Animation', value: 'animation' },
-  { label: 'Comedy', value: 'comedy' },
-  { label: 'Drama', value: 'drama' },
-  { label: 'Fantasy', value: 'fantasy' },
-  { label: 'Horror', value: 'horror' },
-  { label: 'Musicals', value: 'musicals' },
-  { label: 'Mystery', value: 'mystery' },
-  { label: 'Romance', value: 'romance' },
-  { label: 'Science fiction', value: 'science_fiction' },
-  { label: 'Sports', value: 'sports' },
-  { label: 'Thriller', value: 'thriller' },
-  { label: 'Western', value: 'western' },
-];
-
 const blueLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png';
 const redLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
 
 const Sidebar = ({ setMobileOpen }) => {
+  const { data, isFetching } = useGetGenresQuery();
   const classes = useStyles();
   const theme = useTheme();
 
@@ -70,9 +55,13 @@ const Sidebar = ({ setMobileOpen }) => {
       <Divider />
       <List>
         <ListSubheader>Genres</ListSubheader>
-        {demoCategories.map(({ label, value }) => (
+        {isFetching ? (
+          <Box display="flex" justifyContent="center">
+            <CircularProgress />
+          </Box>
+        ) : data.genres.map(({ name, id }) => (
           <Link
-            key={value}
+            key={name}
             className={classes.links}
             to="/"
           >
@@ -85,7 +74,7 @@ const Sidebar = ({ setMobileOpen }) => {
                   alt=""
                 />
               </ListItemIcon> */}
-              <ListItemText primary={label} />
+              <ListItemText primary={name} />
             </ListItem>
           </Link>
         ))}
