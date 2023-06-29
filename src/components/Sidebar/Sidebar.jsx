@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Box, CircularProgress, Divider, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from '@mui/material';
 import { useTheme } from '@mui/styles';
 import { useGetGenresQuery } from '../../services/TMDB';
+import genreIcons from '../../assets/genres';
 import useStyles from './styles';
 
 // Mocking the categories for now
@@ -39,14 +40,14 @@ const Sidebar = ({ setMobileOpen }) => {
             to="/"
           >
             <ListItem onClick={() => {}} button>
-              {/* <ListItemIcon>
+              <ListItemIcon>
                 <img
-                  src={redLogo}
-                  className="classes.genreImages"
+                  src={genreIcons[label.toLowerCase()]}
+                  className={classes.genreImages}
                   height={30}
                   alt=""
                 />
-              </ListItemIcon> */}
+              </ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
           </Link>
@@ -66,14 +67,14 @@ const Sidebar = ({ setMobileOpen }) => {
             to="/"
           >
             <ListItem onClick={() => {}} button>
-              {/* <ListItemIcon>
+              <ListItemIcon>
                 <img
-                  src={redLogo}
-                  className="classes.genreImages"
+                  src={genreIcons[name.toLowerCase()]}
+                  className={classes.genreImages}
                   height={30}
                   alt=""
                 />
-              </ListItemIcon> */}
+              </ListItemIcon>
               <ListItemText primary={name} />
             </ListItem>
           </Link>
