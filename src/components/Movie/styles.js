@@ -17,6 +17,14 @@ export default makeStyles((theme) => ({
       textDecoration: 'none',
     },
   },
+  image: {
+    borderRadius: '20px',
+    height: '300px',
+    marginBottom: '10px',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
+  },
   title: {
     color: theme.palette.text.primary,
     textOverflow: 'ellipsis',
