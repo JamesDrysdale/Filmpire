@@ -20,8 +20,6 @@ export const tmdbApi = createApi({
           return `movie/${genreIdOrCategoryName}?page=${page}&api_key=${tmdbApiKey}`;
         }
 
-        console.log(genreIdOrCategoryName); // undefined
-
         //  Get Movies By Genre (E.G. Action, Adventure, Animation)
         if (genreIdOrCategoryName && typeof genreIdOrCategoryName === 'number') {
           return `discover/movie?with_genres=${genreIdOrCategoryName}&page=${page}&api_key=${tmdbApiKey}`;
