@@ -8,25 +8,23 @@ export const tmdbApi = createApi({
   reducerPath: 'tmdbApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3' }),
   endpoints: (builder) => ({
-    //  Get Genres
+    //* Get Genres
     getGenres: builder.query({
       query: () => `genre/movie/list?api_key=${tmdbApiKey}`,
     }),
     //  Get Movies by [Type]
     getMovies: builder.query({
-      query: ({ categoryIdOrGenreName, page }) => {
+      query: ({ genreIdOrCategoryName, page }) => {
         //  Get Movies By Category (E.G. Popular / Top Rated / Upcoming)
-        if (categoryIdOrGenreName && typeof categoryIdOrGenreName === 'string') {
-          console.log('Inside categories', categoryIdOrGenreName);
-          return `movie/${categoryIdOrGenreName}?page=${page}&api_key=${tmdbApiKey}`;
+        if (genreIdOrCategoryName && typeof genreIdOrCategoryName === 'string') {
+          return `movie/${genreIdOrCategoryName}?page=${page}&api_key=${tmdbApiKey}`;
         }
 
-        console.log(categoryIdOrGenreName); // undefined
+        console.log(genreIdOrCategoryName); // undefined
 
         //  Get Movies By Genre (E.G. Action, Adventure, Animation)
-        if (categoryIdOrGenreName && typeof categoryIdOrGenreName === 'number') {
-          console.log('Inside genres', categoryIdOrGenreName);
-          return `discover/movie?with_genres=${categoryIdOrGenreName}?page=${page}&api_key=${tmdbApiKey}`;
+        if (genreIdOrCategoryName && typeof genreIdOrCategoryName === 'number') {
+          return `discover/movie?with_genres=${genreIdOrCategoryName}&page=${page}&api_key=${tmdbApiKey}`;
         }
 
         //  Get popular Movies - Acts as the default when site first loads, before any selection is made
