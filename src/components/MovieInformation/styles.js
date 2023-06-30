@@ -25,4 +25,22 @@ export default makeStyles((theme) => ({
       marginBottom: '30px',
     },
   },
+  genresContainer: {
+    margin: '10px 0 !important',
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+  },
+  genreImage: {
+    filter: theme.palette.mode === 'dark' && 'invert(1)',
+    marginRight: '10px',
+  },
+  links: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0.5rem 1rem',
+    },
+  },
 }));
