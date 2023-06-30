@@ -89,7 +89,7 @@ const MovieInformation = () => {
             <Grid
               key={i}
               item
-              sx={4}
+              xs={4}
               md={2}
               component={Link}
               to={`/actors/${character.id}`}
