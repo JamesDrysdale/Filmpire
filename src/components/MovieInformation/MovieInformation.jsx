@@ -17,7 +17,7 @@ const MovieInformation = () => {
   const dispatch = useDispatch();
 
   const isMovieFavorited = false;
-  const isMovieWatchlisted = true;
+  const isMovieWatchlisted = false;
 
   const addToFavorites = async () => {
     await axios.post(`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
@@ -152,7 +152,7 @@ const MovieInformation = () => {
                   onClick={addToWatchlist}
                   endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
                 >
-                  {isMovieWatchlisted ? 'Remove from Watchlist' : 'Add to Watchlist'}
+                  {isMovieWatchlisted ? 'Watchlist' : 'Watchlist'}
                 </Button>
                 <Button endIcon={<ArrowBack />} sx={{ borderColor: 'primary.main' }}>
                   <Typography style={{ textDecoration: 'none' }} component={Link} to="/" color="inherit" variant="subtitle2">
