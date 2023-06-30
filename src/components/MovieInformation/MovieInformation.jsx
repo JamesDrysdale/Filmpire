@@ -101,6 +101,9 @@ const MovieInformation = () => {
                 alt={character.name}
               />
               <Typography color="textPrimary">{character?.name}</Typography>
+              <Typography color="textSecondary">
+                {character.character.split('/')[0]}
+              </Typography>
             </Grid>
             )
           ))}
