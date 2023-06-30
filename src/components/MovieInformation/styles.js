@@ -39,6 +39,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    textDecoration: 'none',
     [theme.breakpoints.down('sm')]: {
       padding: '0.5rem 1rem',
     },
