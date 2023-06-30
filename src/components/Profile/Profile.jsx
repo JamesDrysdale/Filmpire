@@ -6,6 +6,7 @@ import { userSelector } from '../../features/auth';
 
 const Profile = () => {
   const { user } = useSelector(userSelector);
+  const favouriteMovies = [];
 
   const logout = () => {
     localStorage.clear();
@@ -23,6 +24,17 @@ const Profile = () => {
           Logout &nbsp; <ExitToApp />
         </Button>
       </Box>
+      {!favouriteMovies.length
+        ? (
+          <Typography variant="h5">
+            Add favourites or add some movies to your watchlist to see them here.
+          </Typography>
+        )
+        : (
+          <Box>
+            Favourite Movies
+          </Box>
+        )}
       {/* {user.name ? user.name : user.username} */}
     </Box>
   );
