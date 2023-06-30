@@ -106,7 +106,7 @@ const MovieInformation = () => {
               </Typography>
             </Grid>
             )
-          ))}
+          )).slice(0, 6)} {/* Show the first 6 actors */}
         </Grid>
       </Grid>
     </Grid>
