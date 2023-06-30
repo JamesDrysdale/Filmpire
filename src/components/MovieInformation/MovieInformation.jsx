@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Button, ButtonGroup, CircularProgress, Grid, Modal, Rating, Typography, useMediaQuery } from '@mui/material';
-import { ArrowBack, Movie as MovieIcon, Favorite, FavoriteBorderOutlined, Language, PlusOne, Remove, Theatres } from '@mui/icons-material';
+import { ArrowBack, Movie as MovieIcon, Favorite, FavoriteBorderOutlined, Language, PlusOne, Remove, Theaters } from '@mui/icons-material';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -114,6 +114,7 @@ const MovieInformation = () => {
               <ButtonGroup size="small" varient="outlined">
                 <Button target="_blank" rel="noopener noreferrer" href={data?.homepage} endIcon={<Language />}>Website</Button>
                 <Button target="_blank" rel="noopener noreferrer" href={`https://www.imdb.com/title/${data?.imdb_id}`} endIcon={<MovieIcon />}>IMDB</Button>
+                <Button onClick={() => {}} href="#" endIcon={<Theaters />}>Trailer</Button>
               </ButtonGroup>
             </Grid>
           </div>
