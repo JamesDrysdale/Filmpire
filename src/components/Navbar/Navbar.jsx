@@ -17,7 +17,6 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery('(max-width:600px)');
   const dispatch = useDispatch();
-  console.log(user);
 
   const token = localStorage.getItem('request_token');
   const sessionIdFromLocalStorage = localStorage.getItem('session_id');
@@ -81,7 +80,7 @@ const Navbar = () => {
               <Button
                 color="inherit"
                 component={Link}
-                to="/profile/:id"
+                to={`/profile/${user.id}`}
                 className={classes.linkButton}
                 onClick={() => {}}
               >
