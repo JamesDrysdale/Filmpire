@@ -7,7 +7,11 @@ import { userSelector } from '../../features/auth';
 const Profile = () => {
   const { user } = useSelector(userSelector);
 
-  console.log('Profile');
+  const logout = () => {
+    localStorage.clear();
+
+    window.location.href = '/';
+  };
 
   return (
     <Box>
