@@ -89,7 +89,7 @@ const MovieInformation = () => {
             <Grid
               key={i}
               item
-              sx={4}
+              xs={4}
               md={2}
               component={Link}
               to={`/actors/${character.id}`}
@@ -100,6 +100,7 @@ const MovieInformation = () => {
                 src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
                 alt={character.name}
               />
+              <Typography color="textPrimary">{character?.name}</Typography>
             </Grid>
             )
           ))}
