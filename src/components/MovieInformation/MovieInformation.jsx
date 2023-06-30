@@ -85,6 +85,7 @@ const MovieInformation = () => {
         </Typography>
         <Grid item container spacing={2}>
           {data && data.credits.cast.map((character, i) => (
+            character.profile_path && (
             <Grid
               key={i}
               item
@@ -100,6 +101,7 @@ const MovieInformation = () => {
                 alt={character.name}
               />
             </Grid>
+            )
           ))}
         </Grid>
       </Grid>
