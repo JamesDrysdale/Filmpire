@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Box, Button, ButtonGroup, CircularProgress, Grid, Typography } from '@mui/material';
-import { ArrowBack, Movie as MovieIcon, Favorite, FavoriteBorderOutlined, Language, Theaters } from '@mui/icons-material';
+import { ArrowBack, Movie as MovieIcon, Language } from '@mui/icons-material';
 
 import { useGetMoviesByActorIdQuery, useGetActorQuery } from '../../services/TMDB';
 import useStyles from './styles';
@@ -26,14 +26,12 @@ const Actors = () => {
   if (error) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
-        <Button startIcon={<ArrowBack />} onClick={() => history.goBack()} color="primary">
+        <Button startIcon={<ArrowBack />} onClick={() => {}} color="primary">
           Go back
         </Button>
       </Box>
     );
   }
-
-  console.log('here', data);
 
   return (
     <>
