@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import store from './app/store';
 import App from './components/App';
+import './index.css';
 
 const theme = createTheme({});
 
