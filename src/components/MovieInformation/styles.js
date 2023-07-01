@@ -15,7 +15,9 @@ export default makeStyles((theme) => ({
     boxShadow: '0.5em 1em 1em rgb(64, 64, 70)',
     width: '80%',
     [theme.breakpoints.down('md')]: {
+      display: 'flex',
       margin: '0 auto',
+      marginBottom: '30px',
       width: '50%',
     },
     [theme.breakpoints.down('sm')]: {
