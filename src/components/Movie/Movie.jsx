@@ -13,7 +13,7 @@ const Movie = ({ movie, index }) => {
           <img
             alt={movie.title}
             className={classes.image}
-            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://www.fillmurray.com/200/300'}
+            src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg'}
           />
           <Typography className={classes.title} variant="h5">
             {movie.title}
