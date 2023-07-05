@@ -18,6 +18,10 @@ const useAlan = () => {
           }
         } else if (command === 'login') {
           fetchToken();
+        } else if (command === 'logout') {
+          localStorage.clear();
+
+          window.location.href = '/';
         }
       },
     });
