@@ -3,7 +3,7 @@ import alanBtn from '@alan-ai/alan-sdk-web';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { selectGenreOrCategory } from '../features/currentGenreOrCategory';
+import { searchMovie, selectGenreOrCategory } from '../features/currentGenreOrCategory';
 import { ColorModeContext } from '../utils/ToggleColorMode';
 import { fetchToken } from '../utils';
 
@@ -15,7 +15,7 @@ const useAlan = () => {
   useEffect(() => {
     alanBtn({
       key: 'c0a2e61e7f025ba51c91b10ed241252a2e956eca572e1d8b807a3e2338fdd0dc/stage',
-      onCommand: ({ command, mode, genres, genreOrCategory }) => {
+      onCommand: ({ command, mode, genres, genreOrCategory, query }) => {
         if (command === 'chooseGenre') {
           const foundGenre = genres.find((g) => g.name.toLowerCase() === genreOrCategory.toLowerCase());
 
@@ -43,6 +43,8 @@ const useAlan = () => {
           localStorage.clear();
 
           history.push('/');
+        } else if (command === 'search') {
+          dispatch(searchMovie(query));
         }
       },
     });
