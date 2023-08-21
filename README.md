@@ -1,13 +1,16 @@
 # Filmpire - By James Drysdale
 
-## MVP
+![GitHub Repo stars](https://img.shields.io/github/stars/JamesDrysdale/Filmpire?style=social)
 
-- User can see a list of films
-- User can see details for individual films
-- User can see a list of Actors
-- User can see a profile page
+## 📝 Description
 
-## Available Scripts
+**Filmpire** is an app for browsing and getting information about movies and the actors that feature in them.
+
+## 🛠️ Setup Project
+To get this project up and running in your development environment, follow these step-by-step instructions.
+
+- Clone the app onto your computer.
+- Run ```npm install``` on the root of the project.
 
 In the project directory, you can run:
 
